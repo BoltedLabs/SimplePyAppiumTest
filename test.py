@@ -1,7 +1,10 @@
-import unittest
+import base64
 import os
-from random import randint
+import unittest
+
 from appium import webdriver
+from random import randint
+
 
 class SimpleIOSTests(unittest.TestCase):
 
@@ -33,6 +36,11 @@ class SimpleIOSTests(unittest.TestCase):
         self._generate_presses()
 
         countLabelText = self.driver.find_element_by_accessibility_id('ButtonCountLabel').text
+
+        screenshotBase64 = self.driver.get_screenshot_as_base64()
+        with open('screenshots/screenshot.png', 'wb') as f:
+            f.write(base64.b64decode(screenshotBase64))
+
         self.assertEqual(countLabelText, self._expectedText)
 
 
