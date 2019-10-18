@@ -12,7 +12,7 @@ You could also install the wrapper globally
 
 ```
 pipenv --python 3.7 shell
-pip install Appium-Python-Client
+pipenv install Appium-Python-Client
 ```
 
 ## Run test

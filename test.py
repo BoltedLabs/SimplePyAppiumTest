@@ -16,10 +16,16 @@ class SimpleIOSTests(unittest.TestCase):
             desired_capabilities={
                 'app': app,
                 'platformName': 'iOS',
-                'platformVersion': '13.1',
-                'deviceName': 'iPhone 11',
-                'automationName': 'XCUITest'
+                'platformVersion': '12.2',
+                'deviceName': 'iPhone X',
+                'automationName': 'XCUITest',
+                'language': 'es',
+                'locale': 'US'
             })
+        
+        # dump = os.popen('aapt dump badging myapp.apk').read()
+        # defaults read /path/test.app/Info CFBundleShortVersionString
+        # defaults read /path/test.app/Info CFBundleVersion
 
     def tearDown(self):
         self.driver.quit()
